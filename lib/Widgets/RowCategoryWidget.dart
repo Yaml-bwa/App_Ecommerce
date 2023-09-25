@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:parcial_mobil/Categorias/Vestidos.dart';
-import 'package:parcial_mobil/Prendas/Prendas.dart';
-import 'package:parcial_mobil/Widgets/AllItemsWidget.dart';
+
 
 class RowCategoryWidget extends StatelessWidget {
   const RowCategoryWidget({super.key});

@@ -43,7 +43,7 @@ class Vestidos extends StatelessWidget {
                   SizedBox(width: 90),
                   Container(
                     child: Text(
-                      "V E S T I D O S",
+                      "P A N T A L O N E S",
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),

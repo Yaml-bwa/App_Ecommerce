@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-//import 'package:parcial_mobil/Widgets/ArgumentsWidget.dart';
+import 'package:parcial_mobil/Prendas/Prendas.dart';
 import 'package:parcial_mobil/Widgets/ItemBottomNavBar.dart';
-
-//import 'package:parcial_mobil/main.dart';
 
 class ItemPage extends StatelessWidget {
   const ItemPage({
@@ -67,30 +65,32 @@ class ItemPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 15),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.43,
-                child: Stack(
-                  alignment: Alignment.center,
-                  children: [
-                    Container(
-                      height: 238,
-                      width: 230,
-                      margin: const EdgeInsets.only(top: 4, right: 20),
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 102, 142, 230),
-                        borderRadius: BorderRadius.circular(10),
+           //   for (int i = 1; i < 6; i++)
+                Container(
+                  height: MediaQuery.of(context).size.height * 0.43,
+                  child: Stack(
+                    alignment: Alignment.center,
+                    children: [
+                      Container(
+                        height: 238,
+                        width: 230,
+                        margin: const EdgeInsets.only(top: 4, right: 20),
+                        decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 102, 142, 230),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
                       ),
-                    ),
-                    //Imagen
-                    Image.asset(
-                      "images/1.png",
-                      height: 350,
-                      width: 350,
-                      fit: BoxFit.contain,
-                    ),
-                  ],
+                      //Imagen
+
+                      Image.asset(
+                        variedad[i],
+                        height: 350,
+                        width: 350,
+                        fit: BoxFit.contain,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
               Container(
                 height: MediaQuery.of(context).size.height * 0.4,
                 width: double.infinity,

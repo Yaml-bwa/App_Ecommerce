@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:parcial_mobil/Prendas/Prendas.dart';
 
 import 'package:parcial_mobil/Widgets/BottonCartSheet.dart';
 
@@ -15,7 +16,7 @@ class AllItemsWidget extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       children: [
-        for (int i = 1; i < 40; i++)
+        for (int i = 1; i < 6; i++)
           Container(
             padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
             margin: const EdgeInsets.all(8),
@@ -44,7 +45,7 @@ class AllItemsWidget extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.all(10),
                     child: Image.asset(
-                      "images/Sudadera.png",
+                      variedad[i],
                       height: 90,
                       width: 90,
                     ),
