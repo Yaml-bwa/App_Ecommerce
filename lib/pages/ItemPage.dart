@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:parcial_mobil/Widgets/ArgumentsWidget.dart';
 import 'package:parcial_mobil/Widgets/ItemBottomNavBar.dart';
-import 'package:parcial_mobil/Prendas/Prendas.dart';
+
 //import 'package:parcial_mobil/main.dart';
 
 class ItemPage extends StatelessWidget {

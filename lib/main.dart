@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:parcial_mobil/Widgets/BottonCartSheet.dart';
+import 'package:parcial_mobil/Widgets/AllItemsWidget.dart';
+
 import 'package:parcial_mobil/pages/HomePage.dart';
+import 'package:parcial_mobil/pages/ItemPage.dart';
 
 import 'package:parcial_mobil/pages/LoginPage.dart';
 import 'package:parcial_mobil/pages/Profile.dart';
@@ -17,8 +19,9 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => LoginPage(),
         "homePage": (context) => HomePage(),
-      //  "itemPage": (context) => ItemPage(),
+       "itemPage": (context) => ItemPage(),
        // "bottonCartSheet": (context) => BottonCartSheet(),
+       "allItemsWidget":(context) => AllItemsWidget(),
         "profile": (context) => Profile(),
       },
     );

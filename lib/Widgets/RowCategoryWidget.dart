@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:parcial_mobil/Categorias/PantallaCVestidos.dart';
+import 'package:parcial_mobil/Categorias/Vestidos.dart';
 import 'package:parcial_mobil/Prendas/Prendas.dart';
+import 'package:parcial_mobil/Widgets/AllItemsWidget.dart';
 
 class RowCategoryWidget extends StatelessWidget {
   const RowCategoryWidget({super.key});
@@ -27,7 +28,11 @@ class Categoria extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        //  Navigator.pushNamed(context, "itemPage");
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Vestidos(),
+            ));
       },
       child: Container(
         margin: EdgeInsets.only(top: 10, bottom: 15, left: 10, right: 10),

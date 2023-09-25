@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:parcial_mobil/Prendas/Prendas.dart';
 import 'package:parcial_mobil/Widgets/AllItemsWidget.dart';
 
-class PantallaCVestidos extends StatelessWidget {
-  const PantallaCVestidos({super.key});
+class Vestidos extends StatelessWidget {
+  const Vestidos({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -50,14 +50,7 @@ class PantallaCVestidos extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
-              GridView.count(
-                crossAxisCount: 2,
-                childAspectRatio: 0.68,
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                children: [for (int i = 1; i < vestidos.length; i++) Prenda()],
-              ),
+              AllItemsWidget()
             ],
           ),
         ),
