@@ -103,12 +103,7 @@ class AllItemsWidget extends StatelessWidget {
                         ),
                         child: InkWell(
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => BottonCartSheet(),
-                              ),
-                            );
+                           
                           },
                           child: const Icon(
                             CupertinoIcons.cart_fill_badge_plus,
