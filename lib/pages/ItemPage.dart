@@ -3,13 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:parcial_mobil/Widgets/ItemBottomNavBar.dart';
 
 class ItemPage extends StatelessWidget {
-  final String imagen;
-  final String titulo;
-  final String descripcion;
-  final double precio;
   const ItemPage({
     super.key,
-    required this.imagen, required this.titulo, required this.descripcion, required this.precio,
   });
   @override
   Widget build(BuildContext context) {
@@ -87,7 +82,7 @@ class ItemPage extends StatelessWidget {
                     //Imagen
 
                     Image.asset(
-                      imagen,
+                      "images/1.png",
                       height: 350,
                       width: 350,
                       fit: BoxFit.contain,
@@ -120,7 +115,7 @@ class ItemPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          titulo,
+                          "titulo",
                           style: const TextStyle(
                             fontSize: 28,
                             fontWeight: FontWeight.bold,
@@ -128,7 +123,7 @@ class ItemPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          "\$$precio",
+                          "\$50",
                           style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w500,
@@ -157,7 +152,7 @@ class ItemPage extends StatelessWidget {
                     const SizedBox(height: 20),
                     Container(
                       child: Text(
-                        descripcion,
+                        "descripcion",
                         style: const TextStyle(
                           color: Color(0xFF475269),
                           fontSize: 17,

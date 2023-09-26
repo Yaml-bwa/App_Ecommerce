@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 
 class Profile extends StatelessWidget {
+
   const Profile({super.key});
 
   @override
@@ -68,24 +69,28 @@ class Profile extends StatelessWidget {
           ),
           SizedBox(height: 80),
           Text(
-            "Yamil Torrico Vasquez",
+            "Nombre Usuario",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
           ),
           SizedBox(height: 20),
           Text(
-            "Correo@gmail.com",
+            EmailAuthProvider.EMAIL_LINK_SIGN_IN_METHOD,
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
           ),
-          Spacer(),
+          SizedBox(height: 58.0),
           InkWell(
             onTap: () {
+              FirebaseAuth.instance.signOut();
               Navigator.pushNamed(context, "/");
             },
             child: Container(
-              padding: EdgeInsets.all(8),
-              margin: EdgeInsets.symmetric(vertical: 20),
+              alignment: Alignment.center,
+              margin: EdgeInsets.symmetric(horizontal: 105),
+              padding: EdgeInsets.symmetric(horizontal: 15),
+              height: 55,
+              width: double.infinity,
               decoration: BoxDecoration(
-                color: Color(0xFFF5F9FD),
+                color: Color(0xFF475269),
                 borderRadius: BorderRadius.circular(10),
                 boxShadow: [
                   BoxShadow(
@@ -98,8 +103,10 @@ class Profile extends StatelessWidget {
               child: Text(
                 "Cerrar Sesion",
                 style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 25,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
+                  letterSpacing: 1,
                 ),
               ),
             ),

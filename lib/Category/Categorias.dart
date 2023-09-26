@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:parcial_mobil/Prendas/Prendas.dart';
 
 import 'package:parcial_mobil/Widgets/AllItemsWidget.dart';
 
-class Vestidos extends StatelessWidget {
-  const Vestidos({super.key});
+class Categorias extends StatelessWidget {
+  
+  const Categorias({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -44,17 +44,14 @@ class Vestidos extends StatelessWidget {
                   SizedBox(width: 90),
                   Container(
                     child: Text(
-                      "B L U S A S",
+                      "V E S T I D O S",
                       style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ],
               ),
-              for (int i = 1; i < variedad.length; i++)
-                AllItemsWidget(
-                  imagen: variedad[i],
-                )
+              AllItemsWidget(),
             ],
           ),
         ),

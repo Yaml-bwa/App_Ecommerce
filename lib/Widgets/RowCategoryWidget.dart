@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:parcial_mobil/Categorias/Vestidos.dart';
-import 'package:parcial_mobil/Prendas/Prendas.dart';
+import 'package:parcial_mobil/Category/Categorias.dart';
 
 class RowCategoryWidget extends StatelessWidget {
   const RowCategoryWidget({super.key});
@@ -17,7 +16,7 @@ class RowCategoryWidget extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => Vestidos(),
+                    builder: (context) => Categorias(),
                   ),
                 );
               },
@@ -45,7 +44,7 @@ class RowCategoryWidget extends StatelessWidget {
                       children: [
                         //Imagen del producto
                         Image.asset(
-                          categorias[i],
+                          "images/1.png",
                           height: 90,
                           width: 100,
                           fit: BoxFit.contain,
@@ -60,7 +59,7 @@ class RowCategoryWidget extends StatelessWidget {
                         children: [
                           //Descripcion del producto
                           Text(
-                            nombCategorias[i],
+                            "nombre",
                             style: TextStyle(
                                 color: Color(0xFF475269),
                                 fontSize: 23,

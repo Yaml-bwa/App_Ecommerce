@@ -1,13 +1,30 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:parcial_mobil/Firebase_Auth_Implementation/Firebase_Auth_Services.dart';
+import 'package:parcial_mobil/pages/Profile.dart';
 
-class LoginPage extends StatelessWidget {
-  
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  final FirebaseAuthService _auth = FirebaseAuthService();
+
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
       body: SingleChildScrollView(
         child: SafeArea(
           child: Column(
@@ -34,7 +51,7 @@ class LoginPage extends StatelessWidget {
                 child: Row(
                   children: [
                     Icon(
-                      Icons.person,
+                      Icons.email,
                       size: 27,
                       color: Color(0xFF475269),
                     ),
@@ -44,8 +61,10 @@ class LoginPage extends StatelessWidget {
                       width: 250,
                       child: TextFormField(
                         decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: "Enter Username"),
+                          border: InputBorder.none,
+                          hintText: "Correo Electronico",
+                        ),
+                        controller: _emailController,
                       ),
                     )
                   ],
@@ -70,32 +89,35 @@ class LoginPage extends StatelessWidget {
                 child: Row(
                   children: [
                     //Icono
-                    Icon(
-                      Icons.lock,
+                    const Icon(
+                      Icons.vpn_key,
                       size: 27,
                       color: Color(0xFF475269),
                     ),
-                    SizedBox(width: 10),
+                    const SizedBox(width: 10),
                     Container(
                       //      margin: EdgeInsets,
                       width: 250,
                       child: TextFormField(
-                        decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: "Enter Password"),
+                        decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          hintText: "Contraseña",
+                        ),
+                        controller: _passwordController,
+                        obscureText: true,
                       ),
                     )
                   ],
                 ),
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Container(
-                margin: EdgeInsets.only(left: 15),
+                margin: const EdgeInsets.only(left: 15),
                 alignment: Alignment.centerLeft,
                 child: TextButton(
                   onPressed: () {},
-                  child: Text(
-                    "Forget Password",
+                  child: const Text(
+                    "Olvidaste tu contraseña",
                     style: TextStyle(
                       color: Color(0xFF475269),
                       fontSize: 16,
@@ -104,30 +126,28 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 40),
+              const SizedBox(height: 40),
               InkWell(
-                onTap: () {
-                  Navigator.pushNamed(context, "homePage");
-                },
+                onTap: _signIn,
                 child: Container(
                   alignment: Alignment.center,
-                  margin: EdgeInsets.symmetric(horizontal: 20),
-                  padding: EdgeInsets.symmetric(horizontal: 15),
+                  margin: const EdgeInsets.symmetric(horizontal: 20),
+                  padding: const EdgeInsets.symmetric(horizontal: 15),
                   height: 55,
                   width: double.infinity,
                   decoration: BoxDecoration(
-                    color: Color(0xFF475269),
+                    color: const Color(0xFF475269),
                     borderRadius: BorderRadius.circular(10),
                     boxShadow: [
                       BoxShadow(
-                        color: Color(0xFF475269).withOpacity(0.3),
+                        color: const Color(0xFF475269).withOpacity(0.3),
                         blurRadius: 5,
                         spreadRadius: 1,
                       ),
                     ],
                   ),
-                  child: Text(
-                    "Sign In",
+                  child: const Text(
+                    "Iniciar Sesion",
                     style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.w500,
@@ -137,29 +157,30 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Don't Have Account? - ",
+                    "No tengo una cuenta?",
                     style: TextStyle(
-                      color: Color(0xFF475269).withOpacity(0.8),
+                      color: const Color(0xFF475269).withOpacity(0.8),
                       fontSize: 16,
                     ),
                   ),
                   TextButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, "homePage");
-                      },
-                      child: Text(
-                        "Sign Up",
-                        style: TextStyle(
-                          color: Color(0XFF475269),
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ))
+                    onPressed: () {
+                      Navigator.pushNamed(context, "register");
+                    },
+                    child: const Text(
+                      "Crear Cuenta",
+                      style: TextStyle(
+                        color: Color(0XFF475269),
+                        fontSize: 18,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
                 ],
               )
             ],
@@ -167,5 +188,20 @@ class LoginPage extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void _signIn() async {
+    String email = _emailController.text;
+    String password = _passwordController.text;
+
+    User? user = await _auth.signInWithEmailAndPassword(email, password);
+
+    if (user != null) {
+      print("Usuario correcto");
+      AlertDialog();
+      Navigator.pushNamed(context, "homePage");
+    } else {
+      print("Error");
+    }
   }
 }

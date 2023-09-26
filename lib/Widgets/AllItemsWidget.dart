@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'package:parcial_mobil/Prendas/Prendas.dart';
+
 
 import 'package:parcial_mobil/Widgets/BottonCartSheet.dart';
 
 import 'package:parcial_mobil/pages/ItemPage.dart';
 
 class AllItemsWidget extends StatelessWidget {
-  final String imagen;
 
-  const AllItemsWidget({super.key, required this.imagen});
+
+  const AllItemsWidget({super.key});
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -19,7 +19,7 @@ class AllItemsWidget extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       children: [
-        for (int i = 1; i < variedad.length; i++)
+        for (int i = 1; i < 5; i++)
           Container(
             padding: const EdgeInsets.only(left: 15, right: 15, top: 5),
             margin: const EdgeInsets.all(8),
@@ -42,10 +42,7 @@ class AllItemsWidget extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => ItemPage(
-                          imagen: variedad[i],
-                          descripcion: generoPrenda[i],
-                          precio: precVariedad[i],
-                          titulo: nombVaridad[i],
+                        
                         ),
                       ),
                     );
@@ -53,7 +50,7 @@ class AllItemsWidget extends StatelessWidget {
                   child: Padding(
                     padding: EdgeInsets.all(10),
                     child: Image.asset(
-                      variedad[i],
+                      "images/1.png",
                       height: 90,
                       width: 90,
                     ),
@@ -64,7 +61,7 @@ class AllItemsWidget extends StatelessWidget {
                   child: Container(
                     alignment: Alignment.centerLeft,
                     child: Text(
-                      nombVaridad[i],
+                      "titulo",
                       style: const TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -76,7 +73,7 @@ class AllItemsWidget extends StatelessWidget {
                 Container(
                   alignment: Alignment.centerLeft,
                   child: Text(
-                    generoPrenda[i],
+                    "descripcion",
                     style: TextStyle(
                       fontSize: 15,
                       color: const Color(0xFF475269).withOpacity(0.7),
@@ -89,7 +86,7 @@ class AllItemsWidget extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
-                        "\$" + precVariedad[i].toString(),
+                        "\$50" ,
                         style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w500,
