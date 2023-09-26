@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:parcial_mobil/pages/ItemPage.dart';
+
 
 class BottonCartSheet extends StatelessWidget {
   const BottonCartSheet({
@@ -43,12 +43,8 @@ class BottonCartSheet extends StatelessWidget {
                         children: [
                           InkWell(
                             onTap: () {
-                              //Navigator.pushNamed(context, "itemPage");
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => ItemPage(),
-                                  ));
+                              Navigator.pushNamed(context, "itemPage");
+                             
                             },
                             child: Stack(
                               alignment: Alignment.center,

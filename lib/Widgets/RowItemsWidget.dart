@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:parcial_mobil/Prendas/Prendas.dart';
 
 class RowItemsWidget extends StatelessWidget {
   const RowItemsWidget({super.key});
@@ -11,7 +10,7 @@ class RowItemsWidget extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       child: Row(
         children: [
-          for (int i = 1; i < 4; i++)
+          for (int i = 1; i < 2; i++)
             Container(
               margin: EdgeInsets.only(top: 10, bottom: 10, left: 10),
               padding: EdgeInsets.symmetric(horizontal: 10),

@@ -19,13 +19,12 @@ class MyApp extends StatelessWidget {
       routes: {
         "/": (context) => LoginPage(),
         "homePage": (context) => HomePage(),
-       "itemPage": (context) => ItemPage(),
-       // "bottonCartSheet": (context) => BottonCartSheet(),
-       "allItemsWidget":(context) => AllItemsWidget(),
+        "itemPage": (context) =>
+            ItemPage(imagen: "", descripcion: "", precio: 0.0, titulo: ""),
+        // "bottonCartSheet": (context) => BottonCartSheet(),
+        "allItemsWidget": (context) => AllItemsWidget(imagen: ""),
         "profile": (context) => Profile(),
       },
     );
   }
 }
-
-

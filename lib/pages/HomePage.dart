@@ -135,7 +135,7 @@ class HomePage extends StatelessWidget {
               const SizedBox(height: 10),
               const RowItemsWidget(),
               const SizedBox(height: 30),
-              AllItemsWidget(),
+              AllItemsWidget(imagen: ""),
               // Pantalones(),
             ],
           ),

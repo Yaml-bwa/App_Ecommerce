@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:parcial_mobil/Prendas/Prendas.dart';
 
 import 'package:parcial_mobil/Widgets/AllItemsWidget.dart';
 
@@ -50,7 +51,10 @@ class Vestidos extends StatelessWidget {
                   ),
                 ],
               ),
-              AllItemsWidget()
+              for (int i = 0; i < prendaVestidos.length; i++)
+                AllItemsWidget(
+                  imagen: prendaVestidos[i],
+                )
             ],
           ),
         ),

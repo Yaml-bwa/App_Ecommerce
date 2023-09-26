@@ -1,4 +1,9 @@
 var top = "images/Tops.png";
+
+var prendaVestidos = [
+  "images/Vestidos.png"
+];
+
 //PRENDAS DE VARIDAD
 var variedad = [
   "images/Vestidos.png",
@@ -56,18 +61,14 @@ var tallasPrendas = [
 //CATEGORIAS
 var categorias = [
   "images/Vestidos.png",
+  "images/2.png",
   "images/Polera.png",
-  "images/Short.png",
-  "images/Sudadera.png",
-  "images/Tops.png",
-  "images/Pantalon.png",
+  "images/Pantalones.png",
 ];
 var nombCategorias = [
   "Vestidos",
+  "Blusas",
   "Poleras",
-  "Shorts",
-  "Sudaderas",
-  "Tops",
   "Pantalones",
 ];
 //FIN DE CATEGORIA
@@ -115,13 +116,6 @@ var precPrendOfert = [
 var vestidos = [
   "images/Vestidos.png",
 ];
-var titulo = [
-  "Vestido"
-];
-var descripcion = [
-  "Mujer"
-];
-var precio = [
-  180.0
-];
-
+var titulo = ["Vestido"];
+var descripcion = ["Mujer"];
+var precio = [180.0];

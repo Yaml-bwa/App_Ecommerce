@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:parcial_mobil/Prendas/Prendas.dart';
+
 import 'package:parcial_mobil/Widgets/ItemBottomNavBar.dart';
 
 class ItemPage extends StatelessWidget {
+  final String imagen;
+  final String titulo;
+  final String descripcion;
+  final double precio;
   const ItemPage({
     super.key,
+    required this.imagen, required this.titulo, required this.descripcion, required this.precio,
   });
   @override
   Widget build(BuildContext context) {
@@ -65,32 +70,31 @@ class ItemPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 15),
-           //   for (int i = 1; i < 6; i++)
-                Container(
-                  height: MediaQuery.of(context).size.height * 0.43,
-                  child: Stack(
-                    alignment: Alignment.center,
-                    children: [
-                      Container(
-                        height: 238,
-                        width: 230,
-                        margin: const EdgeInsets.only(top: 4, right: 20),
-                        decoration: BoxDecoration(
-                          color: const Color.fromARGB(255, 102, 142, 230),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
+              Container(
+                height: MediaQuery.of(context).size.height * 0.43,
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    Container(
+                      height: 238,
+                      width: 230,
+                      margin: const EdgeInsets.only(top: 4, right: 20),
+                      decoration: BoxDecoration(
+                        color: const Color.fromARGB(255, 102, 142, 230),
+                        borderRadius: BorderRadius.circular(10),
                       ),
-                      //Imagen
+                    ),
+                    //Imagen
 
-                      Image.asset(
-                        variedad[i],
-                        height: 350,
-                        width: 350,
-                        fit: BoxFit.contain,
-                      ),
-                    ],
-                  ),
+                    Image.asset(
+                      imagen,
+                      height: 350,
+                      width: 350,
+                      fit: BoxFit.contain,
+                    ),
+                  ],
                 ),
+              ),
               Container(
                 height: MediaQuery.of(context).size.height * 0.4,
                 width: double.infinity,
@@ -116,7 +120,7 @@ class ItemPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "titulo",
+                          titulo,
                           style: const TextStyle(
                             fontSize: 28,
                             fontWeight: FontWeight.bold,
@@ -124,7 +128,7 @@ class ItemPage extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          "\$50",
+                          "\$$precio",
                           style: const TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.w500,
@@ -153,7 +157,7 @@ class ItemPage extends StatelessWidget {
                     const SizedBox(height: 20),
                     Container(
                       child: Text(
-                        "decripcion",
+                        descripcion,
                         style: const TextStyle(
                           color: Color(0xFF475269),
                           fontSize: 17,
@@ -176,35 +180,36 @@ class ItemPage extends StatelessWidget {
                         //tallas de las prendas
                         Row(
                           children: [
-                            // for (int i = 1; i < tallasPrendas.length; i++)
-                            Container(
-                              height: 30,
-                              width: 30,
-                              alignment: Alignment.center,
-                              margin: const EdgeInsets.symmetric(horizontal: 5),
-                              decoration: BoxDecoration(
-                                color: const Color(0xFFF5F9FD),
-                                borderRadius: BorderRadius.circular(10),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: const Color(0xFF475269)
-                                        .withOpacity(0.3),
-                                    blurRadius: 5,
-                                    spreadRadius: 1,
-                                  )
-                                ],
-                              ),
-                              child: InkWell(
-                                onTap: () {},
-                                child: Text(
-                                  "S",
-                                  style: const TextStyle(
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500,
+                            for (int i = 1; i < 4; i++)
+                              Container(
+                                height: 30,
+                                width: 30,
+                                alignment: Alignment.center,
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 5),
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFFF5F9FD),
+                                  borderRadius: BorderRadius.circular(10),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: const Color(0xFF475269)
+                                          .withOpacity(0.3),
+                                      blurRadius: 5,
+                                      spreadRadius: 1,
+                                    )
+                                  ],
+                                ),
+                                child: InkWell(
+                                  onTap: () {},
+                                  child: Text(
+                                    "S",
+                                    style: const TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500,
+                                    ),
                                   ),
                                 ),
                               ),
-                            ),
                           ],
                         ),
                       ],
